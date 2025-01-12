@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Parisienne&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+.formulario-novo-video {
+  font-family: "Roboto", serif;
+  color: #f5f5f5;
+}
+
+.formulario-novo-video h1 {
+  font-size: 36px;
+  border-top: 1px ridge #262626;
+  border-bottom: 1px ridge #262626;
+}
+
+.formulario-novo-video h2 {
+  font-size: 60px;
+  font-weight: bolder;
+}
+
+.formulario-novo-video h3 {
+  font-size: 20px;
+  font-family: "Roboto", "Regular";
+  font-weight: lighter;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Source Code Pro", serif;
+  justify-content: start;
+}
+
+form label {
+  display: grid;
+}
+
+form input {
+  background: #191919;
+  border: #262626;
+  color: #f5f5f5;
+  font-size: 20px;
+  width: 470px;
+  height: 62px;
+  border-radius: 10px;
+  place-self: center;
+}
+
+form select {
+  background: #191919;
+  border: #262626;
+  color: #f5f5f5;
+  font-size: 20px;
+  width: 470px;
+  height: 62px;
+  border-radius: 10px;
+  place-self: center;
+}

@@ -1,0 +1,48 @@
+.banner {
+  display: flex;
+  justify-content: space-between; /* Distribui os itens igualmente */
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #000; /* Cor de fundo para destaque */
+}
+
+.banner img {
+  max-width: 150px; /* Limita o tamanho da imagem */
+}
+
+.btnBanner {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column; /* Muda para coluna em telas pequenas */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .banner img {
+    max-width: 80%; /* Reduz o tamanho da imagem */
+    margin-bottom: 10px; /* Adiciona espaço abaixo da imagem */
+  }
+
+  .btnBanner {
+    flex-direction: column; /* Botões em coluna */
+    gap: 15px; /* Ajusta o espaçamento */
+  }
+}
+
+/* Responsividade para telas muito pequenas (ex: 480px) */
+@media (max-width: 480px) {
+  .banner img {
+    max-width: 60%; /* Tamanho ainda menor para telas muito pequenas */
+  }
+
+  .btnBanner button {
+    font-size: 14px; /* Reduz o tamanho do texto dos botões */
+    padding: 8px 16px; /* Ajusta o tamanho dos botões */
+  }
+}
+

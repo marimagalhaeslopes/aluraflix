@@ -1,0 +1,15 @@
+.addVideo {
+    width: 180.13px;
+    height: 54px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #ffffff;
+    color:#ffffff;
+    font-size: 20px;
+    background-color: transparent;
+  }
+  
+  .addVideo:hover {
+      box-shadow: 0 0 12px 4px #2271d1;
+      border-color: #2271d1;
+  }
