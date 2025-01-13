@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./FormularioNovoVideo.css";
+import Banner from "../Banner/Banner";
 
 const FormularioNovoVideo = ({ onGuardar }) => {
   const [titulo, setTitulo] = useState("");
@@ -25,7 +26,9 @@ const FormularioNovoVideo = ({ onGuardar }) => {
 
   return (
     
+    
     <form className="formulario-novo-video" onSubmit={handleSubmit}>
+      <Banner />
       <h2>Novo Vídeo</h2>
       <h3>Complete o formulário para criar um novo card de vídeo.</h3>
       <h1>CRIAR CARD</h1>
