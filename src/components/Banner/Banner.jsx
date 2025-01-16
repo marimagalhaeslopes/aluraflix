@@ -3,6 +3,7 @@ import "./Banner.css";
 import BotaoHome from "../BotaoHome/BotaoHome";
 import BotaoAddVideo from "../BotaoAddVideo/BotaoAddVideo";
 import logo from "../../assets/Logo.svg";
+import Footer from "../Footer/Footer";
 
 const Banner = () => {
   const botoes = [

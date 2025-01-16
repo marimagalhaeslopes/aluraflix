@@ -1,0 +1,48 @@
+.lista-de-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #262626;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Roboto", serif;
+}
+
+.card {
+  border: 3px solid;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card a {
+  display: block;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cards-container {
+  display: flex;
+  gap: 30px;
+}
+
+.botoes-card button {
+  background: none;
+  border: none;
+}

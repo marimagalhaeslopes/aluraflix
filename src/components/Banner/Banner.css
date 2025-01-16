@@ -1,48 +1,48 @@
 .banner {
   display: flex;
-  justify-content: space-between; /* Distribui os itens igualmente */
   align-items: center;
-  padding: 10px 20px;
   width: 100%;
-  background-color: #000; /* Cor de fundo para destaque */
+  background-color: #000;
+  padding-top: 20px;
+  gap: 50%;
+  place-content: center;
+  padding-bottom: 20px;
+  border-bottom: 2px ridge #2271d1;
 }
 
 .banner img {
-  max-width: 150px; /* Limita o tamanho da imagem */
+  max-width: 150px;
 }
 
 .btnBanner {
   display: flex;
-  gap: 10px; /* Espaçamento entre os botões */
-}
+  gap: 10px;
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .banner {
-    flex-direction: column; /* Muda para coluna em telas pequenas */
-    align-items: center; /* Centraliza os itens */
-  }
+  @media (max-width: 768px) {
+    .banner {
+      flex-direction: column;
+      align-items: center;
 
-  .banner img {
-    max-width: 80%; /* Reduz o tamanho da imagem */
-    margin-bottom: 10px; /* Adiciona espaço abaixo da imagem */
-  }
+      .banner img {
+        max-width: 80%;
+        margin-bottom: 10px;
+      }
 
-  .btnBanner {
-    flex-direction: column; /* Botões em coluna */
-    gap: 15px; /* Ajusta o espaçamento */
-  }
-}
+      .btnBanner {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
 
-/* Responsividade para telas muito pequenas (ex: 480px) */
-@media (max-width: 480px) {
-  .banner img {
-    max-width: 60%; /* Tamanho ainda menor para telas muito pequenas */
-  }
+    @media (max-width: 480px) {
+      .banner img {
+        max-width: 60%;
+      }
 
-  .btnBanner button {
-    font-size: 14px; /* Reduz o tamanho do texto dos botões */
-    padding: 8px 16px; /* Ajusta o tamanho dos botões */
+      .btnBanner button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
   }
 }
-

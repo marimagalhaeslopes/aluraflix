@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FormularioNovoVideo.css";
-import Banner from "../Banner/Banner";
 
-const FormularioNovoVideo = ({ onGuardar }) => {
-  const [titulo, setTitulo] = useState("");
-  const [categoria, setCategoria] = useState("");
-  const [urlImagem, setUrlImagem] = useState("");
-  const [linkVideo, setLinkVideo] = useState("");
-  const [descricao, setDescricao] = useState("");
+const FormularioNovoVideo = ({ video = {}, onGuardar }) => {
+  const [titulo, setTitulo] = useState(video.titulo || "");
+  const [categoria, setCategoria] = useState(video.categoria || "");
+  const [urlImagem, setUrlImagem] = useState(video.urlImagem || "");
+  const [linkVideo, setLinkVideo] = useState(video.linkVideo || "");
+  const [descricao, setDescricao] = useState(video.descricao || "");
+
+  useEffect(() => {
+    setTitulo(video.titulo || "");
+    setCategoria(video.categoria || "");
+    setUrlImagem(video.urlImagem || "");
+    setLinkVideo(video.linkVideo || "");
+    setDescricao(video.descricao || "");
+  }, [video]);
 
   const limparCampos = () => {
     setTitulo("");
@@ -19,75 +26,58 @@ const FormularioNovoVideo = ({ onGuardar }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const novoVideo = { titulo, categoria, urlImagem, linkVideo, descricao };
-    onGuardar(novoVideo);
-    limparCampos();
+    const dadosAtualizados = { titulo, categoria, urlImagem, linkVideo, descricao };
+    onGuardar(dadosAtualizados);
   };
 
   return (
-    
-    
     <form className="formulario-novo-video" onSubmit={handleSubmit}>
-      <Banner />
-      <h2>Novo Vídeo</h2>
-      <h3>Complete o formulário para criar um novo card de vídeo.</h3>
-      <h1>CRIAR CARD</h1>
+      <h2>Cadastrar Vídeo</h2>
       <div className="form">
-      <label>
-        Título:
+        <label htmlFor="titulo">Título</label>
         <input
+          name="titulo"
           type="text"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Categoria:
+        <label>Categoria</label>
         <select
           value={categoria}
           onChange={(e) => setCategoria(e.target.value)}
           required
         >
           <option value="">Selecione</option>
-          <option value="backend">Backend</option>
           <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
           <option value="design">Design</option>
         </select>
-      </label>
-      <label>
-        URL da Imagem:
+        <label>URL da Imagem</label>
         <input
           type="text"
           value={urlImagem}
           onChange={(e) => setUrlImagem(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Link do Vídeo:
+        <label>Link do Vídeo</label>
         <input
           type="url"
           value={linkVideo}
           onChange={(e) => setLinkVideo(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Descrição:
+        <label>Descrição</label>
         <textarea
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
           required
         ></textarea>
-      </label>
       </div>
-      <div className="botoes">
-        <button type="submit">Guardar</button>
-        <button type="button" onClick={limparCampos}>
-          Limpar
-        </button>
-      </div>
+      <button type="submit">Salvar Alterações</button>
+      <button type="button" onClick={limparCampos}>
+        Limpar
+      </button>
     </form>
   );
 };

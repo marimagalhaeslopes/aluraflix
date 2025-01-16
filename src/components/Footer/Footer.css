@@ -1,0 +1,17 @@
+.logoImagem img {
+  max-width: 150px;
+  width: auto;
+}
+
+.logoImagem {
+  border-color: #2271d1;
+}
+
+footer {
+  width: 100%;
+  background-color: #000000;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 2px solid #2271d3;
+}

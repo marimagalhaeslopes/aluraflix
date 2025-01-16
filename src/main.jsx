@@ -1,15 +1,28 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
-import Home from "./Pages/Home";
-import { Routes } from "react-router";
-import FormularioNovoVideo from "./components/FormularioNovoVideo/FormularioNovoVideo";
+import Home from "./Pages/Home/Home";
+import FormularioNovoVideo from "../src/Pages/FormularioNovoVideo/FormularioNovoVideo";
+import React, { useState } from "react";
 
-createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="/novo-video" element={<FormularioNovoVideo />} />
-    </Routes>
-  </BrowserRouter>
-);
+const App = () => {
+  const [videos, setVideos] = useState([]);
+
+  const adicionarVideo = (novoVideo) => {
+    setVideos((prevVideos) => [...prevVideos, novoVideo]);
+  };
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home videos={videos} />} />
+        <Route
+          path="/novo-video"
+          element={<FormularioNovoVideo onGuardar={adicionarVideo} />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+createRoot(document.getElementById("root")).render(<App />);
